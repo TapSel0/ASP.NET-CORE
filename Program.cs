@@ -14,8 +14,8 @@ namespace asp_gpt
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<ApplicationDbContext>(
-                options => options.UseSqlServer(
-                    builder.Configuration.GetConnectionString("DefaultConnection")));
+                options => options.UseMySql(
+                    builder.Configuration.GetConnectionString("DefaultConnection"), new MySqlServerVersion(new Version(8,0,21))));
 
             var app = builder.Build();
 
