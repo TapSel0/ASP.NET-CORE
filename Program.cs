@@ -1,4 +1,5 @@
 using asp_gpt.Models;
+using asp_gpt.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
@@ -17,6 +18,8 @@ namespace asp_gpt
                 options => options.UseMySql(
                     builder.Configuration.GetConnectionString("DefaultConnection"), new MySqlServerVersion(new Version(8,0,21))));
 
+            builder.Services.AddScoped<CarService>();
+            
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Cars";
+}
+@model List<asp_gpt.Models.Car>
+
+<table>
+    <thead>
+        <tr>
+            <th>Cars</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var car in Model)
+        {
+            <tr>
+                <th>@car.Name @car.Price @car.Description</th>
+            </tr>
+        }
+    </tbody>
+</table>

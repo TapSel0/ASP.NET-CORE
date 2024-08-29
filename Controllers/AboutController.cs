@@ -12,7 +12,7 @@ namespace asp_gpt.Controllers
 
         public IActionResult ProductDetails()
         {
-            var product = new Cars
+            var product = new Car
             {
                 Id = 1,
                 Name = "Test",
