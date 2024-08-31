@@ -31,7 +31,7 @@ namespace asp_gpt.Controllers
         {
             if (ModelState.IsValid)
             {
-                await _carService.AddCar(car);
+                await _carService.AddCar(car); // add in db
                 return RedirectToAction(nameof(Index));
             }
             return View(car);
